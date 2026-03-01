@@ -1,0 +1,149 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+// Sample data - referencing the same images as Portfolio
+const previewProjects = [
+    { id: 1, title: 'Publicidad', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
+    { id: 42, title: 'Branding', category: 'Branding', image: '/images/branding/Website Mockup.png', video: '/images/branding/lleida en verdlogo.mp4' },
+    { id: 12, title: 'Motion Graphics', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions5.mp4' },
+    { id: 13, title: 'Videos', category: 'Videos', image: '/images/app-gamma.png', video: '/images/videos/laseveuvella-nadal.mov' },
+    { id: 20, title: 'Fotografia Creativa', category: 'Fotografia creativa', image: '/images/Fotografia creativa/High Graphic Portrait.png' },
+    { id: 32, title: 'Automatización', category: 'Automatización', image: '/images/service-automatizamos-lego.png', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2.mp4' },
+];
+
+const GalleryPreview = () => {
+    return (
+        <section className="section" style={{ background: '#1a1a1a', padding: '6rem 2rem', textAlign: 'center' }}>
+            <div className="container">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h2 style={{
+                        fontFamily: 'var(--font-display)',
+                        fontSize: 'clamp(1.5rem, 3.5vw, 3rem)',
+                        color: '#FF3C4B',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                        fontWeight: 700,
+                        marginBottom: '4rem'
+                    }}>
+                        PORTFOLIO
+                    </h2>
+
+                    {/* Gallery Container with Corner Markers */}
+                    <div style={{ position: 'relative', padding: '2rem 0' }}>
+                        {/* Corner markers */}
+                        <div style={{ position: 'absolute', top: -1, left: -1, width: 20, height: 20, borderTop: '2px solid #555', borderLeft: '2px solid #555' }} />
+                        <div style={{ position: 'absolute', top: -1, right: -1, width: 20, height: 20, borderTop: '2px solid #555', borderRight: '2px solid #555' }} />
+                        <div style={{ position: 'absolute', bottom: -1, left: -1, width: 20, height: 20, borderBottom: '2px solid #555', borderLeft: '2px solid #555' }} />
+                        <div style={{ position: 'absolute', bottom: -1, right: -1, width: 20, height: 20, borderBottom: '2px solid #555', borderRight: '2px solid #555' }} />
+
+                        {/* Gallery Grid */}
+                        <div style={{
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                            gap: '2.5rem',
+                            marginBottom: '4rem',
+                            textAlign: 'left',
+                            padding: '1rem'
+                        }}>
+                            {previewProjects.map((project, index) => (
+                                <Link key={project.id} to="/portfolio" style={{ textDecoration: 'none' }}>
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: index * 0.1 }}
+                                        style={{ cursor: 'pointer' }}
+                                    >
+                                        <div style={{
+                                            border: '1px solid #333', // Darker border for cards on dark background
+                                            padding: '0',
+                                            height: '100%',
+                                            display: 'flex',
+                                            flexDirection: 'column'
+                                        }}>
+                                            <div style={{
+                                                aspectRatio: '4/3',
+                                                background: '#f0f0f0',
+                                                overflow: 'hidden',
+                                                borderRadius: '0',
+                                                borderBottom: '1px solid #e0e0e0' // Separator line
+                                            }}>
+                                                {project.video ? (
+                                                    <video
+                                                        src={project.video}
+                                                        autoPlay
+                                                        loop
+                                                        muted
+                                                        playsInline
+                                                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
+                                                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+                                                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                                                    />
+                                                ) : (
+                                                    <img
+                                                        src={project.image}
+                                                        alt={project.title}
+                                                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
+                                                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+                                                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                                                    />
+                                                )}
+                                            </div>
+                                            <div style={{ padding: '1rem', background: '#fff' }}>
+                                                <p style={{
+                                                    color: '#FF3C4B',
+                                                    fontSize: '1.4rem',
+                                                    textTransform: 'uppercase',
+                                                    letterSpacing: '0.05em',
+                                                    fontWeight: 900,
+                                                    margin: 0
+                                                }}>
+                                                    {project.category}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    <Link to="/portfolio" style={{ textDecoration: 'none' }}>
+                        <button style={{
+                            padding: '1rem 3rem',
+                            background: '#FF3C4B',
+                            color: '#fff',
+                            borderRadius: '0',
+                            fontWeight: 700,
+                            fontSize: '1.1rem',
+                            border: 'none',
+                            cursor: 'pointer',
+                            textTransform: 'uppercase',
+                            transition: 'transform 0.3s ease, boxShadow 0.3s ease',
+                            boxShadow: '0 4px 15px rgba(255, 60, 75, 0.2)'
+                        }}
+                            onMouseEnter={(e) => {
+                                e.target.style.transform = 'translateY(-3px)';
+                                e.target.style.boxShadow = '0 8px 20px rgba(255, 60, 75, 0.3)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.target.style.transform = 'translateY(0)';
+                                e.target.style.boxShadow = '0 4px 15px rgba(255, 60, 75, 0.2)';
+                            }}
+                        >
+                            Ver Portfolio Completo
+                        </button>
+                    </Link>
+                </motion.div>
+            </div>
+        </section>
+    );
+};
+
+export default GalleryPreview;

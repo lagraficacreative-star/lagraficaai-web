@@ -1,0 +1,2 @@
+Top-left pixel: rgba(224,224,225,255)
+Hex: #e0e0e1
