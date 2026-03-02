@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 // Sample data - referencing the same images as Portfolio
 const previewProjects = [
     { id: 1, title: 'Publicidad', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
-    { id: 42, title: 'Branding', category: 'Branding', image: '/images/branding/Website Mockup.png', video: '/images/branding/lleida en verdlogo.mp4' },
-    { id: 12, title: 'Motion Graphics', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions5.mp4' },
+    { id: 42, title: 'Branding', category: 'Branding', image: '/images/branding/Website Mockup.png' },
+    { id: 12, title: 'Motion Graphics', category: 'Motion graphics', image: '/images/portadamotions.jpg' },
     { id: 13, title: 'Videos', category: 'Videos', image: '/images/app-gamma.png', video: 'https://www.youtube.com/embed/HSdQ3KVa2pY?autoplay=1&mute=1&loop=1&playlist=HSdQ3KVa2pY&controls=0&rel=0' },
     { id: 20, title: 'Fotografia Creativa', category: 'Fotografia creativa', image: '/images/Fotografia creativa/High Graphic Portrait.png' },
-    { id: 32, title: 'Automatización', category: 'Automatización', image: '/images/service-automatizamos-lego.png', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2.mp4' },
+    { id: 32, title: 'Automatización', category: 'Automatización', image: '/images/service-automatizamos-lego.png' },
 ];
 
 const GalleryPreview = () => {
