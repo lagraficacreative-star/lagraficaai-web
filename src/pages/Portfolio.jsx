@@ -40,7 +40,7 @@ const Portfolio = () => {
         { id: 12, title: 'Exploración Motion 05', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions5.mp4' },
         { id: 52, title: 'Documental Cuerpo Humano', category: 'Videos', image: '/images/app-gamma.png', video: '/images/videos/El cuerpo humano.mp4' },
         { id: 53, title: 'Exploración Planetas', category: 'Videos', image: '/images/app-gamma.png', video: '/images/videos/Planetas.mp4' },
-        { id: 13, title: 'La Seveuvella - Nadal', category: 'Videos', image: '/images/app-gamma.png', video: '/images/videos/laseveuvella-nadal.mov' },
+        { id: 13, title: 'La Seveuvella - Nadal', category: 'Videos', image: '/images/app-gamma.png', video: 'https://www.youtube.com/embed/HSdQ3KVa2pY?autoplay=1&mute=1&loop=1&playlist=HSdQ3KVa2pY&controls=0&rel=0' },
         { id: 14, title: 'Nadal Lleida', category: 'Videos', image: '/images/app-gamma.png', video: '/images/videos/nadallleida.mov' },
         { id: 15, title: 'Luz Vibrante lagrafica.ai', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Default_Vibrant_photograph_of_a_giant_sized_blonde_haired_woma_1.jpg' },
         { id: 16, title: 'Estudio de Perspectiva IA', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Default_fotografia_con_un_ngulo_picado_de_una_mujer_de_tamao_g_0 (1).jpg' },
@@ -143,21 +143,40 @@ const Portfolio = () => {
                                         borderBottom: '1px solid #e0e0e0' // Separator
                                     }}>
                                         {project.video ? (
-                                            <video
-                                                src={project.video}
-                                                autoPlay
-                                                loop
-                                                muted
-                                                playsInline
-                                                style={{
-                                                    width: '100%',
-                                                    height: 'auto',
-                                                    display: 'block',
-                                                    transition: 'transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)'
-                                                }}
-                                                onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
-                                                onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                                            />
+                                            project.video.includes('youtube.com') ? (
+                                                <div style={{ width: '100%', height: '100%', aspectRatio: '16/9', position: 'relative' }}>
+                                                    <iframe
+                                                        src={project.video}
+                                                        title={project.title}
+                                                        frameBorder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-view"
+                                                        style={{
+                                                            position: 'absolute',
+                                                            top: 0,
+                                                            left: 0,
+                                                            width: '100%',
+                                                            height: '100%',
+                                                            pointerEvents: 'none'
+                                                        }}
+                                                    ></iframe>
+                                                </div>
+                                            ) : (
+                                                <video
+                                                    src={project.video}
+                                                    autoPlay
+                                                    loop
+                                                    muted
+                                                    playsInline
+                                                    style={{
+                                                        width: '100%',
+                                                        height: 'auto',
+                                                        display: 'block',
+                                                        transition: 'transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)'
+                                                    }}
+                                                    onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+                                                    onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                                                />
+                                            )
                                         ) : (
                                             <img
                                                 src={project.image}

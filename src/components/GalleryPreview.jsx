@@ -7,7 +7,7 @@ const previewProjects = [
     { id: 1, title: 'Publicidad', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
     { id: 42, title: 'Branding', category: 'Branding', image: '/images/branding/Website Mockup.png', video: '/images/branding/lleida en verdlogo.mp4' },
     { id: 12, title: 'Motion Graphics', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions5.mp4' },
-    { id: 13, title: 'Videos', category: 'Videos', image: '/images/app-gamma.png', video: '/images/videos/laseveuvella-nadal.mov' },
+    { id: 13, title: 'Videos', category: 'Videos', image: '/images/app-gamma.png', video: 'https://www.youtube.com/embed/HSdQ3KVa2pY?autoplay=1&mute=1&loop=1&playlist=HSdQ3KVa2pY&controls=0&rel=0' },
     { id: 20, title: 'Fotografia Creativa', category: 'Fotografia creativa', image: '/images/Fotografia creativa/High Graphic Portrait.png' },
     { id: 32, title: 'Automatización', category: 'Automatización', image: '/images/service-automatizamos-lego.png', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2.mp4' },
 ];
@@ -75,16 +75,35 @@ const GalleryPreview = () => {
                                                 borderBottom: '1px solid #e0e0e0' // Separator line
                                             }}>
                                                 {project.video ? (
-                                                    <video
-                                                        src={project.video}
-                                                        autoPlay
-                                                        loop
-                                                        muted
-                                                        playsInline
-                                                        style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
-                                                        onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
-                                                        onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-                                                    />
+                                                    project.video.includes('youtube.com') ? (
+                                                        <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+                                                            <iframe
+                                                                src={project.video}
+                                                                title={project.title}
+                                                                frameBorder="0"
+                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-view"
+                                                                style={{
+                                                                    position: 'absolute',
+                                                                    top: 0,
+                                                                    left: 0,
+                                                                    width: '100%',
+                                                                    height: '100%',
+                                                                    pointerEvents: 'none' // To allow clicking the Link
+                                                                }}
+                                                            ></iframe>
+                                                        </div>
+                                                    ) : (
+                                                        <video
+                                                            src={project.video}
+                                                            autoPlay
+                                                            loop
+                                                            muted
+                                                            playsInline
+                                                            style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
+                                                            onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
+                                                            onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+                                                        />
+                                                    )
                                                 ) : (
                                                     <img
                                                         src={project.image}
