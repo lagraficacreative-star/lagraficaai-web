@@ -40,11 +40,17 @@ const Contact = () => {
                 setStatus({ type: 'success', message: '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.' });
                 setFormData({ nombre: '', email: '', proyecto: '', mensaje: '', privacy: false });
             } else {
-                setStatus({ type: 'error', message: 'Hubo un error al enviar el mensaje. Inténtalo de nuevo.' });
+                const errorData = await response.json();
+                const errorMessage = errorData.error || 'Error del servidor.';
+                console.error("Formspree Error:", errorData);
+                setStatus({
+                    type: 'error',
+                    message: `Error al enviar: ${errorMessage}. Revisa si el formulario está verificado en Formspree.`
+                });
             }
         } catch (error) {
             console.error(error);
-            setStatus({ type: 'error', message: 'Error de conexión. Por favor intente de nuevo más tarde.' });
+            setStatus({ type: 'error', message: 'Error de conexión. Asegúrate de que el enlace de Formspree es correcto.' });
         } finally {
             setIsSubmitting(false);
             setTimeout(() => setStatus({ type: '', message: '' }), 5000);
