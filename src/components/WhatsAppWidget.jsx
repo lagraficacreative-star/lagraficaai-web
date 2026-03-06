@@ -8,14 +8,37 @@ const WhatsAppWidget = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [userMessage, setUserMessage] = useState("");
+    const [selectedService, setSelectedService] = useState(null);
+
+    const servicesList = [
+        "Diseño Branding",
+        "Campañas Publicidad",
+        "Motion / Vídeo",
+        "Automatización IA",
+        "Otro tema"
+    ];
 
     const handleSendMessage = (e) => {
-        e.preventDefault();
-        const textToSend = userMessage.trim() || defaultMessage;
+        if (e) e.preventDefault();
+
+        let textToSend = "";
+        if (selectedService) {
+            textToSend = `Hola LaGráfica AI, estoy interesado en vuestros servicios de *${selectedService}*.`;
+            if (userMessage.trim()) {
+                textToSend += `\n\nDetalles: ${userMessage.trim()}`;
+            }
+        } else {
+            textToSend = userMessage.trim() || defaultMessage;
+        }
+
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(textToSend)}`;
         window.open(url, '_blank', 'noopener,noreferrer');
         setIsOpen(false);
-        setUserMessage("");
+        // Reset state after 1 second to leave it clean for next open
+        setTimeout(() => {
+            setUserMessage("");
+            setSelectedService(null);
+        }, 1000);
     };
 
     return (
@@ -40,7 +63,7 @@ const WhatsAppWidget = () => {
                             background: '#fff',
                             borderRadius: '16px',
                             boxShadow: '0 10px 40px rgba(0,0,0,0.15)',
-                            width: '320px',
+                            width: '340px',
                             overflow: 'hidden',
                             display: 'flex',
                             flexDirection: 'column',
@@ -68,7 +91,6 @@ const WhatsAppWidget = () => {
                                 position: 'relative'
                             }}>
                                 <img src="/favicon.png" alt="LaGráfica AI" style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '50%' }} onError={(e) => { e.target.style.display = 'none' }} />
-                                {/* Fallback if no favicon.png exists */}
                                 <span style={{ position: 'absolute', color: '#095e54', fontWeight: 'bold', fontSize: '1.2rem', zIndex: -1 }}>G</span>
                             </div>
                             <div>
@@ -82,22 +104,27 @@ const WhatsAppWidget = () => {
                             background: '#e5ddd5',
                             padding: '20px',
                             position: 'relative',
-                            minHeight: '180px'
+                            minHeight: '260px',
+                            maxHeight: '400px',
+                            overflowY: 'auto',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '10px'
                         }}>
-                            {/* "WhatsApp pattern" background approximation */}
                             <div style={{
                                 position: 'absolute',
                                 top: 0, left: 0, right: 0, bottom: 0,
                                 opacity: 0.05,
                                 backgroundImage: 'url("https://web.whatsapp.com/img/bg-chat-tile-dark_a4be512e7195b6b733d9110b408f075d.png")',
-                                backgroundSize: 'contain'
+                                backgroundSize: 'contain',
+                                zIndex: 0
                             }}></div>
 
-                            {/* Chat Bubble */}
+                            {/* Mensaje 1: Bot (Bienvenida) */}
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3 }}
+                                transition={{ delay: 0.2 }}
                                 style={{
                                     background: '#fff',
                                     padding: '12px 16px',
@@ -106,22 +133,94 @@ const WhatsAppWidget = () => {
                                     position: 'relative',
                                     color: '#333',
                                     fontSize: '0.95rem',
-                                    boxShadow: '0 1px 2px rgba(0,0,0,0.1)'
+                                    boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
+                                    zIndex: 1
                                 }}
                             >
                                 <p style={{ margin: 0, lineHeight: 1.4 }}>
-                                    ¡Hola! 👋🏻 ¿En qué podemos ayudarte para potenciar tu marca con Inteligencia Artificial?
+                                    ¡Hola! 👋🏻 ¿En qué área podemos ayudarte a potenciar tu negocio hoy?
                                 </p>
-                                <span style={{
-                                    display: 'block',
-                                    textAlign: 'right',
-                                    fontSize: '0.7rem',
-                                    color: '#999',
-                                    marginTop: '5px'
-                                }}>
-                                    Ahora
-                                </span>
                             </motion.div>
+
+                            {/* Opciones (Quick Replies) si aún no ha seleccionado */}
+                            {!selectedService && (
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.8 }}
+                                    style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', zIndex: 1, marginTop: '5px' }}
+                                >
+                                    {servicesList.map((service, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => setSelectedService(service)}
+                                            style={{
+                                                background: '#fff',
+                                                border: '1px solid #128C7E',
+                                                color: '#128C7E',
+                                                padding: '6px 12px',
+                                                borderRadius: '20px',
+                                                fontSize: '0.85rem',
+                                                fontWeight: 500,
+                                                cursor: 'pointer',
+                                                transition: 'all 0.2s'
+                                            }}
+                                            onMouseEnter={(e) => { e.currentTarget.style.background = '#128C7E'; e.currentTarget.style.color = '#fff'; }}
+                                            onMouseLeave={(e) => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.color = '#128C7E'; }}
+                                        >
+                                            {service}
+                                        </button>
+                                    ))}
+                                </motion.div>
+                            )}
+
+                            {/* Mensaje 2: Usuario (Elección enviada formteada como burbuja verde) */}
+                            {selectedService && (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9, originX: 1 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    style={{
+                                        background: '#dcf8c6',
+                                        padding: '10px 14px',
+                                        borderRadius: '12px 12px 0 12px',
+                                        maxWidth: '75%',
+                                        alignSelf: 'flex-end',
+                                        position: 'relative',
+                                        color: '#333',
+                                        fontSize: '0.95rem',
+                                        boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
+                                        zIndex: 1,
+                                        marginTop: '5px'
+                                    }}
+                                >
+                                    <p style={{ margin: 0 }}>Me interesa: <strong>{selectedService}</strong></p>
+                                </motion.div>
+                            )}
+
+                            {/* Mensaje 3: Bot (Confirmación para que escriba más detalles) */}
+                            {selectedService && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.6 }}
+                                    style={{
+                                        background: '#fff',
+                                        padding: '12px 16px',
+                                        borderRadius: '12px 12px 12px 12px',
+                                        maxWidth: '85%',
+                                        position: 'relative',
+                                        color: '#333',
+                                        fontSize: '0.95rem',
+                                        boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
+                                        zIndex: 1,
+                                        marginTop: '5px'
+                                    }}
+                                >
+                                    <p style={{ margin: 0, lineHeight: 1.4 }}>
+                                        ¡Excelente! Dale abajo para enviárnoslo por WhatsApp o, si quieres, añádele algún pequeño detalle más antes de enviarlo. 🚀
+                                    </p>
+                                </motion.div>
+                            )}
                         </div>
 
                         {/* Footer / Send Form */}
