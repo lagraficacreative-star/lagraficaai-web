@@ -33,7 +33,7 @@ const Contact = () => {
             formDataToSubmit.append('proyecto', formData.proyecto);
             formDataToSubmit.append('mensaje', formData.mensaje);
 
-            const response = await fetch("https://formspree.io/f/mqkenzyo", {
+            const response = await fetch("https://formspree.io/f/xqeykzbk", {
                 method: "POST",
                 body: formDataToSubmit,
                 headers: {
