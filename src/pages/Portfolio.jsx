@@ -13,13 +13,13 @@ const Portfolio = () => {
     // Portfolio items with their respective categories
     const projects = [
         // PUBLICIDAD
-        { id: 49, title: 'Campaña Boí Taüll', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
+        { id: 49, title: 'Campaña Boí Taüll', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/BOI_TAULL_CAT MAIN 2023 1080x1080 SUBTITULOS.mov' },
         { id: 1, title: 'Campañas Publicitarias lagrafica.ai', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
-        { id: 7, title: 'Campaña Arids Daniel', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
-        { id: 34, title: 'Meteocat Stories - Empresas', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
-        { id: 35, title: 'Meteocat Stories - Genérica', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
-        { id: 36, title: 'Meteocat Stories - Turismo', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
-        { id: 37, title: 'Campaña King Kong', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png' },
+        { id: 7, title: 'Campaña Arids Daniel', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/aridsdaniel.mp4' },
+        { id: 34, title: 'Meteocat Stories - Empresas', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/METEOCAT_Empreses_Stories.mp4' },
+        { id: 35, title: 'Meteocat Stories - Genérica', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/METEOCAT_Generica_Stories.mp4' },
+        { id: 36, title: 'Meteocat Stories - Turismo', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/METEOCAT_Turisme_Stories.mp4' },
+        { id: 37, title: 'Campaña King Kong', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/No esperis que King Kong et posi a prova!.mp4' },
         { id: 38, title: 'Estació Provença Vinil', category: 'Publicidad', image: '/images/campanias/ESTACIÓ PROVENÇA  VINIL  003.jpg' },
         { id: 39, title: 'Preinscripción FP', category: 'Publicidad', image: '/images/campanias/PresinscripcioFP_1080x1080_v3_Mesa de trabajo 1 copia 8.jpg' },
         { id: 40, title: 'Campaña Vision AI', category: 'Publicidad', image: '/images/campanias/KbJGU_ns.jpg' },
@@ -27,7 +27,7 @@ const Portfolio = () => {
 
         // BRANDING
         { id: 42, title: 'Identidad de Marca Lleida', category: 'Branding', image: '/images/branding/Website Mockup.png' },
-        { id: 43, title: 'Estudio de Marca lagrafica.ai', category: 'Branding', image: '/images/branding/Website Mockup.png' },
+        { id: 43, title: 'Lleida en Verd Logo', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.08.32.png', video: '/images/branding/lleida en verdlogo.mp4' },
         { id: 44, title: 'Captura Identidad 01', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.04.37.png' },
         { id: 45, title: 'Captura Identidad 02', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.08.32.png' },
         { id: 46, title: 'Captura Identidad 03', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.08.37.png' },
@@ -35,20 +35,17 @@ const Portfolio = () => {
         { id: 48, title: 'Captura Identidad 05', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.09.00.png' },
 
         // MOTION GRAPHICS
-        { id: 50, title: 'Motion Reel 2026', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: 'https://www.youtube.com/embed/Qob90gRlGU0?autoplay=1&mute=1&loop=1&playlist=Qob90gRlGU0&controls=0&rel=0' },
-        { id: 51, title: 'Cubo Rubik Motion', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: 'https://www.youtube.com/embed/tkV1sUSmNW4?autoplay=1&mute=1&loop=1&playlist=tkV1sUSmNW4&controls=0&rel=0' },
-        { id: 29, title: 'Exploración Motion 01', category: 'Motion graphics', image: '/images/portadamotions.jpg' },
-        { id: 8, title: 'Exploración Motion 02', category: 'Motion graphics', image: '/images/portadamotions.jpg' },
-        { id: 9, title: 'Exploración Motion 03', category: 'Motion graphics', image: '/images/portadamotions.jpg' },
-        { id: 10, title: 'Exploración Motion 04', category: 'Motion graphics', image: '/images/portadamotions.jpg' },
-        { id: 11, title: 'Exploración Motion 05', category: 'Motion graphics', image: '/images/portadamotions.jpg' },
-        { id: 12, title: 'Exploración Motion 06', category: 'Motion graphics', image: '/images/portadamotions.jpg' },
+        { id: 50, title: 'Motion Reel 2026', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions.mp4' },
+        { id: 51, title: 'Cubo Rubik Motion', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/cuborubik.mp4' },
+        { id: 29, title: 'Exploración Motion 01', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/202602241418.mp4' },
+        { id: 8, title: 'Exploración Motion 02', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/202602250644.mp4' },
+        { id: 9, title: 'Exploración Motion 03', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motion4.mp4' },
+        { id: 10, title: 'Exploración Motion 04', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions2.mp4' },
+        { id: 11, title: 'Exploración Motion 05', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions3.mp4' },
+        { id: 12, title: 'Exploración Motion 06', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions5.mp4' },
 
         // VIDEOS
         { id: 13, title: 'La Seveuvella - Nadal', category: 'Videos', image: '/images/app-gamma.png', video: 'https://www.youtube.com/embed/HSdQ3KVa2pY?autoplay=1&mute=1&loop=1&playlist=HSdQ3KVa2pY&controls=0&rel=0' },
-        { id: 70, title: 'El Cuerpo Humano', category: 'Videos', image: '/images/app-gamma.png' },
-        { id: 71, title: 'Nadal Lleida', category: 'Videos', image: '/images/app-gamma.png' },
-        { id: 72, title: 'Planetas', category: 'Videos', image: '/images/app-gamma.png' },
 
         // FOTOGRAFIA CREATIVA
         { id: 15, title: 'Luz Vibrante lagrafica.ai', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Default_Vibrant_photograph_of_a_giant_sized_blonde_haired_woma_1.jpg' },
@@ -67,10 +64,10 @@ const Portfolio = () => {
         { id: 28, title: 'Christmas Vision', category: 'Fotografia creativa', image: '/images/Fotografia creativa/ojosnavidad.jpg' },
 
         // AUTOMATIZACIÓN
-        { id: 60, title: 'Automatización Flujo 01', category: 'Automatización', image: '/images/automatizamos.jpg' },
-        { id: 61, title: 'Automatización Flujo 02', category: 'Automatización', image: '/images/automatizamos.jpg' },
-        { id: 62, title: 'Automatización Flujo 03', category: 'Automatización', image: '/images/automatizamos.jpg' },
-        { id: 63, title: 'Automatización Flujo 04', category: 'Automatización', image: '/images/automatizamos.jpg' },
+        { id: 60, title: 'Automatización Flujo 01', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2.mp4' },
+        { id: 61, title: 'Automatización Flujo 02', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2 (1).mp4' },
+        { id: 62, title: 'Automatización Flujo 03', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2 (2).mp4' },
+        { id: 63, title: 'Automatización Flujo 04', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2 (3).mp4' },
     ];
 
     const categories = ['Publicidad', 'Branding', 'Motion graphics', 'Videos', 'Fotografia creativa', 'Automatización'];
