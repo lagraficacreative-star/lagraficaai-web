@@ -23,32 +23,38 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsSubmitting(true);
+        setStatus({ type: '', message: '' });
 
-        // Construir el cuerpo del correo
-        const subject = `Nuevo mensaje de ${formData.nombre} desde lagrafica.ai`;
-        const body = `
-Nombre: ${formData.nombre}
-Email: ${formData.email}
-Empresa/Proyecto: ${formData.proyecto}
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: "a3b95926-dc91-4601-9a83-bf20ba8cbddb",
+                    ...formData,
+                    subject: `Nuevo mensaje de web de ${formData.nombre}`,
+                    from_name: "Contacto LaGráfica AI"
+                }),
+            });
 
-Mensaje:
-${formData.mensaje}
-        `.trim();
+            const result = await response.json();
 
-        // Crear el enlace mailto
-        const mailtoLink = `mailto:ai@lagrafica.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Abrir el enlace (abrirá el cliente de correo por defecto del usuario)
-        window.location.href = mailtoLink;
-
-        // Mostrar mensaje de éxito temporalmente
-        setStatus({ type: 'success', message: 'Abriendo tu aplicación de correo...' });
-
-        // Limpiar el formulario y el mensaje después de un tiempo
-        setTimeout(() => {
-            setStatus({ type: '', message: '' });
-            setFormData({ nombre: '', email: '', proyecto: '', mensaje: '', privacy: false });
-        }, 5000);
+            if (result.success) {
+                setStatus({ type: 'success', message: '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.' });
+                setFormData({ nombre: '', email: '', proyecto: '', mensaje: '', privacy: false });
+            } else {
+                setStatus({ type: 'error', message: 'Hubo un error al enviar el mensaje.' });
+            }
+        } catch (error) {
+            setStatus({ type: 'error', message: 'Error de conexión. Por favor intente de nuevo más tarde.' });
+        } finally {
+            setIsSubmitting(false);
+            setTimeout(() => setStatus({ type: '', message: '' }), 5000);
+        }
     };
 
     return (
