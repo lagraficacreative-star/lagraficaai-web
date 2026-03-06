@@ -44,7 +44,7 @@ function App() {
             <div id="agencias"><ForAgencies /></div>
           </main>
         } />
-        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/projects" element={<Portfolio />} />
         <Route path="/aviso-legal" element={<LegalNotice />} />
         <Route path="/politica-privacidad" element={<PrivacyPolicy />} />
       </Routes>

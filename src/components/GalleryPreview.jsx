@@ -52,7 +52,7 @@ const GalleryPreview = () => {
                             padding: '1rem'
                         }}>
                             {previewProjects.map((project, index) => (
-                                <Link key={project.id} to="/portfolio" style={{ textDecoration: 'none' }}>
+                                <Link key={project.id} to="/projects" style={{ textDecoration: 'none' }}>
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const GalleryPreview = () => {
                         </div>
                     </div>
 
-                    <Link to="/portfolio" style={{ textDecoration: 'none' }}>
+                    <Link to="/projects" style={{ textDecoration: 'none' }}>
                         <button style={{
                             padding: '1rem 3rem',
                             background: '#FF3C4B',
