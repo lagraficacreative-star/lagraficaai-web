@@ -5,9 +5,18 @@ const WhatsAppWidget = () => {
     // INFO: Cambia este número por tu número de WhatsApp real (incluyendo el código de país, ej: 34600000000)
     const phoneNumber = "34639087024";
     const defaultMessage = "Hola LaGráfica AI, me gustaría recibir más información sobre vuestros servicios de Inteligencia Artificial.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 
     const [isOpen, setIsOpen] = useState(false);
+    const [userMessage, setUserMessage] = useState("");
+
+    const handleSendMessage = (e) => {
+        e.preventDefault();
+        const textToSend = userMessage.trim() || defaultMessage;
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(textToSend)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+        setIsOpen(false);
+        setUserMessage("");
+    };
 
     return (
         <div style={{
@@ -115,38 +124,59 @@ const WhatsAppWidget = () => {
                             </motion.div>
                         </div>
 
-                        {/* Footer / Send Button */}
-                        <div style={{ padding: '20px', background: '#fff' }}>
-                            <a
-                                href={whatsappUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => setIsOpen(false)}
+                        {/* Footer / Send Form */}
+                        <form
+                            onSubmit={handleSendMessage}
+                            style={{
+                                padding: '15px',
+                                background: '#f0f0f0',
+                                display: 'flex',
+                                gap: '10px',
+                                alignItems: 'center'
+                            }}
+                        >
+                            <input
+                                type="text"
+                                placeholder="Escribe un mensaje..."
+                                value={userMessage}
+                                onChange={(e) => setUserMessage(e.target.value)}
                                 style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    gap: '10px',
-                                    background: '#25D366',
-                                    color: '#fff',
-                                    textDecoration: 'none',
-                                    padding: '12px',
+                                    flex: 1,
+                                    padding: '12px 15px',
                                     borderRadius: '24px',
-                                    fontWeight: 600,
-                                    fontSize: '1rem',
-                                    transition: 'background 0.2s',
-                                    boxShadow: '0 4px 12px rgba(37, 211, 102, 0.3)'
+                                    border: 'none',
+                                    outline: 'none',
+                                    fontSize: '0.95rem',
+                                    background: '#fff',
+                                    color: '#333'
                                 }}
-                                onMouseEnter={(e) => e.currentTarget.style.background = '#1da851'}
-                                onMouseLeave={(e) => e.currentTarget.style.background = '#25D366'}
+                            />
+                            <button
+                                type="submit"
+                                style={{
+                                    width: '45px',
+                                    height: '45px',
+                                    borderRadius: '50%',
+                                    background: '#095e54',
+                                    color: '#fff',
+                                    border: 'none',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    cursor: 'pointer',
+                                    transition: 'background 0.2s',
+                                    flexShrink: 0
+                                }}
+                                onMouseEnter={(e) => e.currentTarget.style.background = '#075e54'}
+                                onMouseLeave={(e) => e.currentTarget.style.background = '#095e54'}
+                                title="Enviar mensaje"
                             >
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateX(-2px) translateY(1px)' }}>
                                     <line x1="22" y1="2" x2="11" y2="13"></line>
                                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                                 </svg>
-                                Abrir Chat
-                            </a>
-                        </div>
+                            </button>
+                        </form>
                     </motion.div>
                 )}
             </AnimatePresence>
