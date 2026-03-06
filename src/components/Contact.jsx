@@ -23,33 +23,32 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setIsSubmitting(true);
-        setStatus({ type: '', message: '' });
 
-        try {
-            // Using Formspree for static site compatibility (Render/Netlify)
-            // Replace 'YOUR_FORMSPREE_ID' with your actual Formspree ID from formspree.io
-            const response = await fetch('https://formspree.io/f/xvgzgeyw', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(formData),
-            });
+        // Construir el cuerpo del correo
+        const subject = `Nuevo mensaje de ${formData.nombre} desde lagrafica.ai`;
+        const body = `
+Nombre: ${formData.nombre}
+Email: ${formData.email}
+Empresa/Proyecto: ${formData.proyecto}
 
-            if (response.ok) {
-                setStatus({ type: 'success', message: '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.' });
-                setFormData({ nombre: '', email: '', proyecto: '', mensaje: '', privacy: false });
-            } else {
-                const result = await response.json();
-                setStatus({ type: 'error', message: result.errors ? result.errors.map(e => e.message).join(', ') : 'Hubo un error al enviar el mensaje.' });
-            }
-        } catch (error) {
-            setStatus({ type: 'error', message: 'Error de conexión. Por favor intente de nuevo más tarde.' });
-        } finally {
-            setIsSubmitting(false);
-        }
+Mensaje:
+${formData.mensaje}
+        `.trim();
+
+        // Crear el enlace mailto
+        const mailtoLink = `mailto:ai@lagrafica.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Abrir el enlace (abrirá el cliente de correo por defecto del usuario)
+        window.location.href = mailtoLink;
+
+        // Mostrar mensaje de éxito temporalmente
+        setStatus({ type: 'success', message: 'Abriendo tu aplicación de correo...' });
+
+        // Limpiar el formulario y el mensaje después de un tiempo
+        setTimeout(() => {
+            setStatus({ type: '', message: '' });
+            setFormData({ nombre: '', email: '', proyecto: '', mensaje: '', privacy: false });
+        }, 5000);
     };
 
     return (

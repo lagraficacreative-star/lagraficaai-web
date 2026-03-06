@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicy = () => {
     useEffect(() => {
@@ -9,6 +10,10 @@ const PrivacyPolicy = () => {
 
     return (
         <div style={{ background: '#fff', minHeight: '100vh', padding: '6rem 2rem' }}>
+            <Helmet>
+                <title>Política de Privacidad | LaGráfica AI</title>
+                <meta name="robots" content="noindex, follow" />
+            </Helmet>
             <div className="container" style={{ maxWidth: '800px' }}>
                 <Link to="/" style={{
                     textDecoration: 'none',
