@@ -20,7 +20,7 @@ const Portfolio = () => {
         { id: 35, title: 'Meteocat Stories - Genérica', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/METEOCAT_Generica_Stories.mp4' },
         { id: 36, title: 'Meteocat Stories - Turismo', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/METEOCAT_Turisme_Stories.mp4' },
         { id: 37, title: 'Campaña King Kong', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/No esperis que King Kong et posi a prova!.mp4' },
-        { id: 38, title: 'Estació Provença Vinil', category: 'Publicidad', image: '/images/campanias/ESTACIÓ PROVENÇA  VINIL  003.jpg' },
+        { id: 38, title: 'Estació Provença Vinil', category: 'Publicidad', image: '/images/campanias/estacio_provenca_vinil_003.jpg' },
         { id: 39, title: 'Preinscripción FP', category: 'Publicidad', image: '/images/campanias/PresinscripcioFP_1080x1080_v3_Mesa de trabajo 1 copia 8.jpg' },
         { id: 40, title: 'Campaña Vision AI', category: 'Publicidad', image: '/images/campanias/KbJGU_ns.jpg' },
         { id: 41, title: 'Atmosphere Study lagrafica.ai', category: 'Publicidad', image: '/images/campanias/Captura de pantalla 2026-02-24 a les 15.25.49.png' },
