@@ -27,35 +27,25 @@ const Contact = () => {
         setStatus({ type: '', message: '' });
 
         try {
-            const data = {
-                service_id: 'ai@lagrafica.com',
-                template_id: 'template_tq08k4i',
-                user_id: 'KIuutPz3Pg7zjgqB_',
-                template_params: {
-                    from_name: formData.nombre,
-                    reply_to: formData.email,
-                    proyecto: formData.proyecto,
-                    message: formData.mensaje
-                }
-            };
+            const formDataToSubmit = new FormData();
+            formDataToSubmit.append('nombre', formData.nombre);
+            formDataToSubmit.append('email', formData.email);
+            formDataToSubmit.append('proyecto', formData.proyecto);
+            formDataToSubmit.append('mensaje', formData.mensaje);
 
-            const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+            const response = await fetch("https://formspree.io/f/mqkenzyo", {
                 method: "POST",
+                body: formDataToSubmit,
                 headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-                body: JSON.stringify(data),
+                    'Accept': 'application/json'
+                }
             });
 
             if (response.ok) {
                 setStatus({ type: 'success', message: '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.' });
                 setFormData({ nombre: '', email: '', proyecto: '', mensaje: '', privacy: false });
             } else {
-                const errorText = await response.text();
-                // Si falla porque ai@lagrafica.com no es el service id real
-                console.error("EmailJS Error:", errorText);
-                setStatus({ type: 'error', message: 'Hubo un error al enviar el mensaje. Inténtalo más tarde.' });
+                setStatus({ type: 'error', message: 'Hubo un error al enviar el mensaje. Inténtalo de nuevo.' });
             }
         } catch (error) {
             console.error(error);
