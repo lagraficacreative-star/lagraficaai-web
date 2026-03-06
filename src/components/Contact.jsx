@@ -27,29 +27,38 @@ const Contact = () => {
         setStatus({ type: '', message: '' });
 
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
+            const data = {
+                service_id: 'ai@lagrafica.com',
+                template_id: 'template_tq08k4i',
+                user_id: 'KIuutPz3Pg7zjgqB_',
+                template_params: {
+                    from_name: formData.nombre,
+                    reply_to: formData.email,
+                    proyecto: formData.proyecto,
+                    message: formData.mensaje
+                }
+            };
+
+            const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                 },
-                body: JSON.stringify({
-                    access_key: "a3b95926-dc91-4601-9a83-bf20ba8cbddb",
-                    ...formData,
-                    subject: `Nuevo mensaje de web de ${formData.nombre}`,
-                    from_name: "Contacto LaGráfica AI"
-                }),
+                body: JSON.stringify(data),
             });
 
-            const result = await response.json();
-
-            if (result.success) {
+            if (response.ok) {
                 setStatus({ type: 'success', message: '¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.' });
                 setFormData({ nombre: '', email: '', proyecto: '', mensaje: '', privacy: false });
             } else {
-                setStatus({ type: 'error', message: 'Hubo un error al enviar el mensaje.' });
+                const errorText = await response.text();
+                // Si falla porque ai@lagrafica.com no es el service id real
+                console.error("EmailJS Error:", errorText);
+                setStatus({ type: 'error', message: 'Hubo un error al enviar el mensaje. Inténtalo más tarde.' });
             }
         } catch (error) {
+            console.error(error);
             setStatus({ type: 'error', message: 'Error de conexión. Por favor intente de nuevo más tarde.' });
         } finally {
             setIsSubmitting(false);
