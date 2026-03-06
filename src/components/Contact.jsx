@@ -27,18 +27,13 @@ const Contact = () => {
         setStatus({ type: '', message: '' });
 
         try {
-            const formDataToSubmit = new FormData();
-            formDataToSubmit.append('nombre', formData.nombre);
-            formDataToSubmit.append('email', formData.email);
-            formDataToSubmit.append('proyecto', formData.proyecto);
-            formDataToSubmit.append('mensaje', formData.mensaje);
-
             const response = await fetch("https://formspree.io/f/xqeykzbk", {
                 method: "POST",
-                body: formDataToSubmit,
                 headers: {
-                    'Accept': 'application/json'
-                }
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify(formData),
             });
 
             if (response.ok) {
