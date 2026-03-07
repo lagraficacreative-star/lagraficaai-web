@@ -43,9 +43,14 @@ const GalleryPreview = () => {
                         <div style={{ position: 'absolute', bottom: -1, right: -1, width: 20, height: 20, borderBottom: '2px solid #555', borderRight: '2px solid #555' }} />
 
                         {/* Gallery Grid */}
-                        <div className="preview-grid">
+                        <div style={{
+                            display: 'grid',
+                            marginBottom: '4rem',
+                            textAlign: 'left',
+                            padding: '1rem'
+                        }} className="preview-grid">
                             {previewProjects.map((project, index) => (
-                                <Link key={project.id} to="/projects" style={{ textDecoration: 'none' }}>
+                                <Link key={project.id} to="/projects" style={{ textDecoration: 'none', display: 'block' }}>
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
