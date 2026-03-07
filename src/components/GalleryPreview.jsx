@@ -9,7 +9,7 @@ const previewProjects = [
     { id: 50, title: 'Motion Graphics', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions.mp4' },
     { id: 13, title: 'Videos', category: 'Videos', image: '/images/app-gamma.png', video: 'https://www.youtube.com/embed/HSdQ3KVa2pY?autoplay=1&mute=1&loop=1&playlist=HSdQ3KVa2pY&controls=0&rel=0' },
     { id: 20, title: 'Fotografia Creativa', category: 'Fotografia creativa', image: '/images/fotografia_creativa/High Graphic Portrait.png' },
-    { id: 60, title: 'Automatización', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/videos/Planetas.mp4' },
+    { id: 60, title: 'Automatización', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/automatizacion_01.mp4' },
 ];
 
 const GalleryPreview = () => {
