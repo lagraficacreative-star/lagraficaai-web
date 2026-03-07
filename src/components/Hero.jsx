@@ -8,7 +8,7 @@ const Hero = () => {
             <section className="hero-visual" style={{
                 position: 'relative',
                 overflow: 'hidden',
-                minHeight: '60vh', // Adaptable for different devices
+                minHeight: '40vh', // Reduced height for initial slider
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
