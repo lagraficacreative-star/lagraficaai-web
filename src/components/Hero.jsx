@@ -8,7 +8,7 @@ const Hero = () => {
             <section className="hero-visual" style={{
                 position: 'relative',
                 overflow: 'hidden',
-                minHeight: '40vh', // Reduced height for initial slider
+                minHeight: '60vh', // Reverted to original height
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -30,7 +30,7 @@ const Hero = () => {
                         width: '100%',
                         height: '100%',
                         backgroundImage: 'url(/images/slider-banner.png)',
-                        backgroundSize: 'cover',
+                        backgroundSize: 'contain', // Changed from cover to contain
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
                         zIndex: 0
