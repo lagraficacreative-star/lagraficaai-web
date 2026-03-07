@@ -26,7 +26,8 @@ dist-ssr
 # Local Netlify folder
 .netlify
 
-# Video files (too large for GitHub)
-*.mp4
-*.mov
-*.wav
+# Video files
+# We ignore the /videos/ folder because it contains files over 50MB (GitHub limit)
+public/images/videos/
+# We also ignore individual large video files in other folders
+public/images/video_mirades.mp4
