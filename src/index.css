@@ -215,3 +215,24 @@ button {
   display: block;
   width: 100%;
 }
+/* Portfolio Preview Grid (3 columns on desktop, responsive on mobile) */
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+  text-align: left;
+  padding: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
