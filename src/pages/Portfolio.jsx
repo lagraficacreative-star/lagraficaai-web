@@ -21,18 +21,18 @@ const Portfolio = () => {
         { id: 36, title: 'Meteocat Stories - Turismo', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/METEOCAT_Turisme_Stories.mp4' },
         { id: 37, title: 'Campaña King Kong', category: 'Publicidad', image: '/images/campanias/campanyapublicitar.png', video: '/images/campanias/No esperis que King Kong et posi a prova!.mp4' },
         { id: 38, title: 'Estació Provença Vinil', category: 'Publicidad', image: '/images/campanias/estacio_provenca_vinil_003.jpg' },
-        { id: 39, title: 'Preinscripción FP', category: 'Publicidad', image: '/images/campanias/PresinscripcioFP_1080x1080_v3_Mesa de trabajo 1 copia 8.jpg' },
+        { id: 39, title: 'Preinscripción FP', category: 'Publicidad', image: '/images/campanias/preinscripcio_fp_1080.jpg' },
         { id: 40, title: 'Campaña Vision AI', category: 'Publicidad', image: '/images/campanias/KbJGU_ns.jpg' },
-        { id: 41, title: 'Atmosphere Study lagrafica.ai', category: 'Publicidad', image: '/images/campanias/Captura de pantalla 2026-02-24 a les 15.25.49.png' },
+        { id: 41, title: 'Atmosphere Study lagrafica.ai', category: 'Publicidad', image: '/images/campanias/atmosphere_study_01.png' },
 
         // BRANDING
         { id: 42, title: 'Identidad de Marca Lleida', category: 'Branding', image: '/images/branding/Website Mockup.png' },
-        { id: 43, title: 'Lleida en Verd Logo', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.08.32.png', video: '/images/branding/lleida en verdlogo.mp4' },
-        { id: 44, title: 'Captura Identidad 01', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.04.37.png' },
-        { id: 45, title: 'Captura Identidad 02', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.08.32.png' },
-        { id: 46, title: 'Captura Identidad 03', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.08.37.png' },
-        { id: 47, title: 'Captura Identidad 04', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.08.55.png' },
-        { id: 48, title: 'Captura Identidad 05', category: 'Branding', image: '/images/branding/Captura de pantalla 2026-02-24 a les 16.09.00.png' },
+        { id: 43, title: 'Lleida en Verd Logo', category: 'Branding', image: '/images/branding/identidad_marca_lleida_01.png', video: '/images/branding/lleida_en_verdlogo.mp4' },
+        { id: 44, title: 'Captura Identidad 01', category: 'Branding', image: '/images/branding/identidad_marca_lleida_02.png' },
+        { id: 45, title: 'Captura Identidad 02', category: 'Branding', image: '/images/branding/identidad_marca_lleida_01.png' },
+        { id: 46, title: 'Captura Identidad 03', category: 'Branding', image: '/images/branding/identidad_marca_lleida_03.png' },
+        { id: 47, title: 'Captura Identidad 04', category: 'Branding', image: '/images/branding/identidad_marca_lleida_04.png' },
+        { id: 48, title: 'Captura Identidad 05', category: 'Branding', image: '/images/branding/identidad_marca_lleida_05.png' },
 
         // MOTION GRAPHICS
         { id: 50, title: 'Motion Reel 2026', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions.mp4' },
@@ -48,26 +48,26 @@ const Portfolio = () => {
         { id: 13, title: 'La Seveuvella - Nadal', category: 'Videos', image: '/images/app-gamma.png', video: 'https://www.youtube.com/embed/HSdQ3KVa2pY?autoplay=1&mute=1&loop=1&playlist=HSdQ3KVa2pY&controls=0&rel=0' },
 
         // FOTOGRAFIA CREATIVA
-        { id: 15, title: 'Luz Vibrante lagrafica.ai', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Default_Vibrant_photograph_of_a_giant_sized_blonde_haired_woma_1.jpg' },
-        { id: 16, title: 'Estudio de Perspectiva IA', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Default_fotografia_con_un_ngulo_picado_de_una_mujer_de_tamao_g_0 (1).jpg' },
-        { id: 17, title: 'Geometric Pop Art', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Geometric Pop Art Face Swap.png' },
-        { id: 18, title: 'Pop Portrait lagrafica.ai', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Geometric Pop Art Portrait.png' },
-        { id: 19, title: 'Desert Dolphin lagrafica.ai', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Gigantic Desert Dolphin.png' },
-        { id: 20, title: 'High Graphic Portrait', category: 'Fotografia creativa', image: '/images/Fotografia creativa/High Graphic Portrait.png' },
-        { id: 21, title: 'Geometric Paint Study', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Light Gray Geometric Paint.png' },
-        { id: 22, title: 'Visible Eye Study', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Visible Eye In Frame.png' },
-        { id: 23, title: 'Atmosphere Study II', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Captura de pantalla 2026-02-24 a les 13.58.34.png' },
-        { id: 24, title: 'Portrait Detail AI', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Captura de pantalla 2026-02-24 a les 13.58.42.png' },
-        { id: 25, title: 'Tall Waterfall Study', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Distant Tall Waterfall.png' },
-        { id: 26, title: 'Arctic Forest Vision', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Gigantic Penguins and Seals in Forest.png' },
-        { id: 27, title: 'Coral Sculpture lagrafica.ai', category: 'Fotografia creativa', image: '/images/Fotografia creativa/Luminous Coral Sculpture.png' },
-        { id: 28, title: 'Christmas Vision', category: 'Fotografia creativa', image: '/images/Fotografia creativa/ojosnavidad.jpg' },
+        { id: 15, title: 'Luz Vibrante lagrafica.ai', category: 'Fotografia creativa', image: '/images/fotografia_creativa/vibrant_woman.jpg' },
+        { id: 16, title: 'Estudio de Perspectiva IA', category: 'Fotografia creativa', image: '/images/fotografia_creativa/high_angle_woman.jpg' },
+        { id: 17, title: 'Geometric Pop Art', category: 'Fotografia creativa', image: '/images/fotografia_creativa/pop_art_face_swap.png' },
+        { id: 18, title: 'Pop Portrait lagrafica.ai', category: 'Fotografia creativa', image: '/images/fotografia_creativa/pop_art_portrait.png' },
+        { id: 19, title: 'Desert Dolphin lagrafica.ai', category: 'Fotografia creativa', image: '/images/fotografia_creativa/desert_dolphin.png' },
+        { id: 20, title: 'High Graphic Portrait', category: 'Fotografia creativa', image: '/images/fotografia_creativa/high_graphic_portrait.png' },
+        { id: 21, title: 'Geometric Paint Study', category: 'Fotografia creativa', image: '/images/fotografia_creativa/geometric_paint.png' },
+        { id: 22, title: 'Visible Eye Study', category: 'Fotografia creativa', image: '/images/fotografia_creativa/visible_eye.png' },
+        { id: 23, title: 'Atmosphere Study II', category: 'Fotografia creativa', image: '/images/fotografia_creativa/atmosphere_study_02.png' },
+        { id: 24, title: 'Portrait Detail IA', category: 'Fotografia creativa', image: '/images/fotografia_creativa/portrait_detail_01.png' },
+        { id: 25, title: 'Tall Waterfall Study', category: 'Fotografia creativa', image: '/images/fotografia_creativa/tall_waterfall.png' },
+        { id: 26, title: 'Arctic Forest Vision', category: 'Fotografia creativa', image: '/images/fotografia_creativa/arctic_forest.png' },
+        { id: 27, title: 'Coral Sculpture lagrafica.ai', category: 'Fotografia creativa', image: '/images/fotografia_creativa/coral_sculpture.png' },
+        { id: 28, title: 'Christmas Vision', category: 'Fotografia creativa', image: '/images/fotografia_creativa/ojosnavidad.jpg' },
 
         // AUTOMATIZACIÓN
-        { id: 60, title: 'Automatización Flujo 01', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2.mp4' },
-        { id: 61, title: 'Automatización Flujo 02', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2 (1).mp4' },
-        { id: 62, title: 'Automatización Flujo 03', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2 (2).mp4' },
-        { id: 63, title: 'Automatización Flujo 04', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/grok-video-809e260a-8f14-4c78-a880-b469e268f6c2 (3).mp4' },
+        { id: 60, title: 'Automatización Flujo 01', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/automatizacion_01.mp4' },
+        { id: 61, title: 'Automatización Flujo 02', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/automatizacion_02.mp4' },
+        { id: 62, title: 'Automatización Flujo 03', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/automatizacion_03.mp4' },
+        { id: 63, title: 'Automatización Flujo 04', category: 'Automatización', image: '/images/automatizamos.jpg', video: '/images/automatizaciones/automatizacion_04.mp4' },
     ];
 
     const categories = ['Publicidad', 'Branding', 'Motion graphics', 'Videos', 'Fotografia creativa', 'Automatización'];
@@ -229,8 +229,7 @@ const Portfolio = () => {
                         marginBottom: '2rem',
                         textTransform: 'uppercase',
                         letterSpacing: '-0.02em',
-                        color: '#000',
-                        whiteSpace: 'nowrap'
+                        color: '#000'
                     }}>
                         Construyendo el futuro de lo digital
                     </h2>

@@ -56,9 +56,10 @@ const CustomSolutions = () => {
                     }}>ESCALABILIDAD Y CONTROL</span>
 
                     <h2 style={{
-                        fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)', // Smaller title
+                        fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
                         marginBottom: '0.5rem',
-                        color: 'var(--color-text)'
+                        color: 'var(--color-text)',
+                        lineHeight: 1.1
                     }}>SOLUCIONES A MEDIDA</h2>
 
                     <p style={{
@@ -72,9 +73,9 @@ const CustomSolutions = () => {
 
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', // Desktop will naturally fit 4 in a row if container allows
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                         gap: '1rem',
-                        marginTop: '4rem',
+                        marginTop: '3rem',
                         textAlign: 'left'
                     }}>
                         {[

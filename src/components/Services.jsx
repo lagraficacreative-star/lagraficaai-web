@@ -43,8 +43,7 @@ const Services = () => {
                         marginBottom: '2rem',
                         textTransform: 'uppercase',
                         letterSpacing: '-0.02em',
-                        color: 'var(--color-text)',
-                        whiteSpace: 'nowrap'
+                        color: 'var(--color-text)'
                     }}>
                         Construyendo el futuro de lo digital
                     </h2>

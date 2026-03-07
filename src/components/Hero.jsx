@@ -8,19 +8,18 @@ const Hero = () => {
             <section className="hero-visual" style={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: '60vh', // Balanced height for standard banner
+                minHeight: '60vh', // Adaptable for different devices
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: '#FF3C4B' // Matched red to blend with image
+                background: '#FF3C4B'
             }}>
                 <motion.div
                     animate={{
-                        scale: [1, 1.02, 1],
-                        rotate: [0, 0.5, -0.5, 0]
+                        scale: [1, 1.02, 1]
                     }}
                     transition={{
-                        duration: 20,
+                        duration: 10,
                         repeat: Infinity,
                         ease: "linear"
                     }}
@@ -31,7 +30,7 @@ const Hero = () => {
                         width: '100%',
                         height: '100%',
                         backgroundImage: 'url(/images/slider-banner.png)',
-                        backgroundSize: 'contain',
+                        backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
                         zIndex: 0
