@@ -56,12 +56,13 @@ const Contact = () => {
             borderTop: 'none',
             paddingTop: '8rem',
             paddingBottom: '8rem',
-            background: '#FF3C4B'
+            background: '#FF3C4B',
+            overflow: 'hidden' // Added to catch any animation overflow
         }}>
-            <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem' }}>
+            <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                     gap: '4rem',
                     alignItems: 'start'
                 }}>
@@ -73,7 +74,7 @@ const Contact = () => {
                         transition={{ duration: 0.6 }}
                     >
                         <h2 style={{
-                            fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+                            fontSize: 'clamp(2.5rem, 8vw, 3.5rem)',
                             marginBottom: '1.5rem',
                             color: '#fff',
                             textTransform: 'uppercase',
@@ -146,7 +147,7 @@ const Contact = () => {
                             display: 'grid',
                             gap: '1.5rem',
                             background: 'rgba(255,255,255,0.05)',
-                            padding: '3rem',
+                            padding: 'clamp(1.5rem, 5vw, 3rem)',
                             borderRadius: '20px',
                             backdropFilter: 'blur(10px)',
                             border: '1px solid rgba(255,255,255,0.1)'
@@ -231,33 +232,43 @@ const Contact = () => {
 
                         <div style={{
                             display: 'flex',
-                            alignItems: 'center',
                             gap: '1.5rem',
                             marginTop: '1rem',
                             flexWrap: 'wrap'
-                        }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                                <input
-                                    type="checkbox"
-                                    id="privacy-contact"
-                                    name="privacy"
-                                    checked={formData.privacy}
-                                    onChange={handleChange}
-                                    required
-                                    style={{
-                                        width: '20px',
-                                        height: '20px',
-                                        cursor: 'pointer',
-                                        accentColor: '#fff'
-                                    }}
-                                />
+                        }} className="contact-actions">
+                            <div style={{ 
+                                display: 'flex', 
+                                alignItems: 'flex-start',
+                                gap: '1rem',
+                                padding: '0.5rem 0',
+                                cursor: 'pointer'
+                            }} onClick={() => setFormData(prev => ({ ...prev, privacy: !prev.privacy }))}>
+                                <div style={{ display: 'flex', alignItems: 'center', height: '1.5rem' }}>
+                                    <input
+                                        type="checkbox"
+                                        id="privacy-contact"
+                                        name="privacy"
+                                        checked={formData.privacy}
+                                        onChange={() => {}} // Handled by parent div for larger hit area
+                                        required
+                                        style={{
+                                            width: '24px', // Bigger checkbox
+                                            height: '24px',
+                                            cursor: 'pointer',
+                                            accentColor: '#fff',
+                                            flexShrink: 0
+                                        }}
+                                    />
+                                </div>
                                 <label htmlFor="privacy-contact" style={{
-                                    fontSize: '0.85rem',
-                                    color: 'rgba(255,255,255,0.8)',
+                                    fontSize: '0.9rem',
+                                    color: 'rgba(255,255,255,0.9)',
                                     cursor: 'pointer',
-                                    fontWeight: 500
-                                }}>
-                                    Acepto la <Link to="/politica-privacidad" style={{ color: '#fff', textDecoration: 'underline' }}>política de privacidad</Link>
+                                    fontWeight: 500,
+                                    lineHeight: '1.4',
+                                    userSelect: 'none'
+                                }} onClick={(e) => e.stopPropagation()}>
+                                    He leído y acepto la <Link to="/politica-privacidad" style={{ color: '#fff', textDecoration: 'underline', fontWeight: 700 }}>política de privacidad</Link>
                                 </label>
                             </div>
 
@@ -266,34 +277,59 @@ const Contact = () => {
                                 disabled={isSubmitting}
                                 style={{
                                     flex: '1',
-                                    minWidth: '200px',
-                                    padding: '1.3rem 2.5rem',
+                                    padding: '1.5rem 2.5rem', 
                                     background: '#fff',
                                     color: '#FF3C4B',
                                     border: 'none',
-                                    borderRadius: '8px',
+                                    borderRadius: '12px', 
                                     fontSize: '1.1rem',
-                                    fontWeight: 800,
+                                    fontWeight: 900,
                                     cursor: isSubmitting ? 'not-allowed' : 'pointer',
                                     opacity: isSubmitting ? 0.7 : 1,
-                                    transition: 'all 0.3s ease',
-                                    boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                    boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
                                     textTransform: 'uppercase',
-                                    letterSpacing: '0.05em'
+                                    letterSpacing: '0.05em',
+                                    position: 'relative',
+                                    zIndex: 5
                                 }}
                                 onMouseEnter={(e) => {
                                     if (!isSubmitting) {
-                                        e.currentTarget.style.transform = 'translateY(-2px)';
-                                        e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.2)';
+                                        e.currentTarget.style.transform = 'translateY(-3px)';
+                                        e.currentTarget.style.boxShadow = '0 15px 40px rgba(0,0,0,0.3)';
                                     }
                                 }}
                                 onMouseLeave={(e) => {
                                     e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+                                    e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
                                 }}
                             >
-                                {isSubmitting ? 'Enviando...' : 'Enviar mensaje →'}
+                                {isSubmitting ? (
+                                    <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" style={{ animation: 'spin 1s linear infinite' }}>
+                                            <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" strokeDasharray="31.4" opacity="0.3" />
+                                            <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" strokeWidth="4" fill="none" />
+                                        </svg>
+                                        Enviando...
+                                    </span>
+                                ) : 'Enviar mensaje →'}
                             </button>
+                            <style>{`
+                                @keyframes spin {
+                                    from { transform: rotate(0deg); }
+                                    to { transform: rotate(360deg); }
+                                }
+                                @media (max-width: 600px) {
+                                    .contact-actions {
+                                        flex-direction: column !important;
+                                        align-items: stretch !important;
+                                    }
+                                    button[type="submit"] {
+                                        width: 100% !important;
+                                        margin-top: 1rem;
+                                    }
+                                }
+                            `}</style>
                         </div>
 
                         {status.message && (

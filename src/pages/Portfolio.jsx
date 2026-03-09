@@ -45,11 +45,7 @@ const Portfolio = () => {
         { id: 12, title: 'Exploración Motion 06', category: 'Motion graphics', image: '/images/portadamotions.jpg', video: '/images/motiongrafics/motions5.mp4' },
 
         // VIDEOS
-        { id: 13, title: 'La Seveuvella - Nadal (YouTube)', category: 'Videos', image: '/images/app-gamma.png', video: 'https://www.youtube.com/embed/HSdQ3KVa2pY?autoplay=1&mute=1&loop=1&playlist=HSdQ3KVa2pY&controls=0&rel=0' },
-        { id: 70, title: 'La Seveuvella - Nadal (Original)', category: 'Videos', image: '/images/app-gamma.png', video: '/images/videos/laseveuvella-nadal.mov' },
-        { id: 71, title: 'Nadal a Lleida', category: 'Videos', image: '/images/app-gamma.png', video: '/images/videos/nadallleida.mov' },
-        { id: 64, title: 'IA: Planetas', category: 'Videos', image: '/images/automatizamos.jpg', video: '/images/videos/Planetas.mp4' },
-        { id: 65, title: 'IA: El Cuerpo Humano', category: 'Videos', image: '/images/automatizamos.jpg', video: '/images/videos/El cuerpo humano.mp4' },
+        { id: 13, title: 'La Seu Vella - Nadal', category: 'Videos', image: '/images/app-gamma.png', video: 'https://www.youtube.com/embed/HSdQ3KVa2pY?autoplay=1&mute=1&loop=1&playlist=HSdQ3KVa2pY&controls=0&rel=0' },
 
         // FOTOGRAFIA CREATIVA
         { id: 15, title: 'Luz Vibrante lagrafica.ai', category: 'Fotografia creativa', image: '/images/fotografia_creativa/vibrant_woman.jpg' },
@@ -99,9 +95,10 @@ const Portfolio = () => {
                     <div style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        gap: '2.5rem',
+                        gap: '1.5rem',
+                        rowGap: '1rem',
                         flexWrap: 'wrap',
-                        marginBottom: '5rem'
+                        marginBottom: '4rem'
                     }}>
                         {categories.map((cat) => (
                             <button

@@ -20,10 +20,12 @@
   --spacing-section: 6rem;
 }
 
-* {
-  box-sizing: border-box;
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 body {
@@ -31,8 +33,6 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
-  overflow-x: hidden;
-  width: 100%;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -72,7 +72,7 @@ button {
 .container {
   max-width: var(--spacing-container);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .section {
@@ -234,5 +234,7 @@ button {
 @media (max-width: 768px) {
   .preview-grid {
     grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 0 !important;
   }
 }

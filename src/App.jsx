@@ -35,14 +35,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={
-          <main>
-            <div id="inicio"><Hero /></div>
-            <div id="servicios"><Services /></div>
-            <div id="soluciones"><CustomSolutions /></div>
-            <VideoSection />
-            <div id="portfolio"><GalleryPreview /></div>
-            <div id="agencias"><ForAgencies /></div>
-          </main>
+  <main style={{ overflowX: 'hidden', width: '100%', position: 'relative' }}>
+    <div id="inicio"><Hero /></div>
+    <div id="servicios"><Services /></div>
+    <div id="soluciones"><CustomSolutions /></div>
+    <VideoSection />
+    <div id="portfolio"><GalleryPreview /></div>
+    <div id="agencias"><ForAgencies /></div>
+  </main>
         } />
         <Route path="/projects" element={<Portfolio />} />
         <Route path="/aviso-legal" element={<LegalNotice />} />

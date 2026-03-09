@@ -14,8 +14,8 @@ const previewProjects = [
 
 const GalleryPreview = () => {
     return (
-        <section className="section" style={{ background: '#1a1a1a', padding: '6rem 2rem', textAlign: 'center' }}>
-            <div className="container">
+        <section className="section" style={{ background: '#1a1a1a', padding: '6rem 0', textAlign: 'center' }}>
+            <div className="container" style={{ padding: '0 1.5rem' }}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -24,30 +24,29 @@ const GalleryPreview = () => {
                 >
                     <h2 style={{
                         fontFamily: 'var(--font-display)',
-                        fontSize: 'clamp(1.5rem, 3.5vw, 3rem)',
-                        color: '#FF3C4B',
+                        fontSize: 'clamp(1.5rem, 8vw, 3rem)',
+                        lineHeight: 1.1,
+                        marginBottom: '2rem',
+                        color: 'var(--color-text)',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
                         fontWeight: 700,
-                        marginBottom: '4rem'
                     }}>
                         PORTFOLIO
                     </h2>
-
+ 
                     {/* Gallery Container with Corner Markers */}
                     <div style={{ position: 'relative', padding: '2rem 0' }}>
                         {/* Corner markers */}
-                        <div style={{ position: 'absolute', top: -1, left: -1, width: 20, height: 20, borderTop: '2px solid #555', borderLeft: '2px solid #555' }} />
-                        <div style={{ position: 'absolute', top: -1, right: -1, width: 20, height: 20, borderTop: '2px solid #555', borderRight: '2px solid #555' }} />
-                        <div style={{ position: 'absolute', bottom: -1, left: -1, width: 20, height: 20, borderBottom: '2px solid #555', borderLeft: '2px solid #555' }} />
-                        <div style={{ position: 'absolute', bottom: -1, right: -1, width: 20, height: 20, borderBottom: '2px solid #555', borderRight: '2px solid #555' }} />
+                        <div style={{ position: 'absolute', top: 0, left: 0, width: 20, height: 20, borderTop: '2px solid #555', borderLeft: '2px solid #555' }} />
+                        <div style={{ position: 'absolute', top: 0, right: 0, width: 20, height: 20, borderTop: '2px solid #555', borderRight: '2px solid #555' }} />
+                        <div style={{ position: 'absolute', bottom: 0, left: 0, width: 20, height: 20, borderBottom: '2px solid #555', borderLeft: '2px solid #555' }} />
+                        <div style={{ position: 'absolute', bottom: 0, right: 0, width: 20, height: 20, borderBottom: '2px solid #555', borderRight: '2px solid #555' }} />
 
-                        {/* Gallery Grid */}
                         <div style={{
                             display: 'grid',
                             marginBottom: '4rem',
-                            textAlign: 'left',
-                            padding: '1rem'
+                            textAlign: 'left'
                         }} className="preview-grid">
                             {previewProjects.map((project, index) => (
                                 <Link key={project.id} to="/projects" style={{ textDecoration: 'none', display: 'block' }}>
@@ -74,7 +73,7 @@ const GalleryPreview = () => {
                                             }}>
                                                 {project.video ? (
                                                     project.video.includes('youtube.com') ? (
-                                                        <div style={{ width: '100%', height: '100%', position: 'relative' }}>
+                                                        <div style={{ width: '100%', height: '100%', position: 'relative', overflow: 'hidden' }}>
                                                             <iframe
                                                                 src={project.video}
                                                                 title={project.title}
@@ -116,7 +115,7 @@ const GalleryPreview = () => {
                                             <div style={{ padding: '1rem', background: '#fff' }}>
                                                 <p style={{
                                                     color: '#FF3C4B',
-                                                    fontSize: '1.4rem',
+                                                    fontSize: '1.1rem',
                                                     textTransform: 'uppercase',
                                                     letterSpacing: '0.05em',
                                                     fontWeight: 900,

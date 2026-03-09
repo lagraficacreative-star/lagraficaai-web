@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const ForAgencies = () => {
     return (
-        <section className="section" style={{ background: 'var(--color-surface)' }}>
-            <div className="container">
+        <section className="section" style={{ background: 'var(--color-surface)', padding: '6rem 0' }}>
+            <div className="container" style={{ padding: '0 1.5rem' }}>
                 <div style={{
                     display: 'grid',
                     gridTemplateColumns: '1fr 1fr',
@@ -13,29 +13,31 @@ const ForAgencies = () => {
                 }} className="responsive-grid">
 
                     <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1.1, marginBottom: '2rem', color: 'var(--color-text)', textTransform: 'uppercase' }}>
+                        <h2 style={{ fontSize: 'clamp(1.5rem, 8vw, 2.5rem)', lineHeight: 1.1, marginBottom: '2rem', color: 'var(--color-text)', textTransform: 'uppercase' }}>
                             Partner para <br />
                             <span style={{
                                 background: 'var(--gradient-main)',
                                 WebkitBackgroundClip: 'text',
                                 WebkitTextFillColor: 'transparent'
-                            }}>agencias y departamentos de Marketing</span>
+                            }}>agencias y marketing</span>
                         </h2>
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                         style={{
-                            padding: '2rem',
-                            borderLeft: '1px solid rgba(0,0,0,0.1)'
+                            padding: '1.5rem 0',
+                            borderLeft: window.innerWidth < 768 ? 'none' : '1px solid rgba(0,0,0,0.1)',
+                            borderTop: window.innerWidth < 768 ? '1px solid rgba(0,0,0,0.1)' : 'none',
+                            marginTop: window.innerWidth < 768 ? '1.5rem' : '0'
                         }}
                     >
                         <ul style={{ listStyle: 'none', space: 'y-4' }}>
@@ -48,7 +50,7 @@ const ForAgencies = () => {
                             ].map((item, i) => (
                                 <li key={i} style={{
                                     marginBottom: '1.5rem',
-                                    fontSize: '1.3rem',
+                                    fontSize: '1.1rem',
                                     display: 'flex',
                                     alignItems: 'center',
                                     color: 'var(--color-text)'

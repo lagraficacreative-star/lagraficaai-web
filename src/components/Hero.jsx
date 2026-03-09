@@ -5,10 +5,10 @@ const Hero = () => {
     return (
         <>
             {/* 1. Main Visual Section ("The Slider") */}
-            <section className="hero-visual" style={{
+            <section className="hero-section" style={{
                 position: 'relative',
                 overflow: 'hidden',
-                minHeight: '60vh', // Reverted to original height
+                minHeight: '40vh',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -37,6 +37,16 @@ const Hero = () => {
                     }}
                 />
             </section>
+            <style>{`
+                .hero-section {
+                    min-height: 40vh;
+                }
+                @media (min-width: 768px) {
+                    .hero-section {
+                        min-height: 60vh;
+                    }
+                }
+            `}</style>
         </>
     );
 };

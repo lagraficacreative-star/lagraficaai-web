@@ -17,7 +17,7 @@ const VideoSection = () => {
                 overflow: 'hidden'
             }}>
                 <iframe
-                    src="https://www.youtube.com/embed/Dyq8538rAZM?autoplay=1&mute=1&loop=1&playlist=Dyq8538rAZM&controls=1&rel=0"
+                    src="https://www.youtube.com/embed/HSdQ3KVa2pY?autoplay=1&mute=1&loop=1&playlist=HSdQ3KVa2pY&controls=1&rel=0"
                     title="Reproductor de vídeo de YouTube"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-view; web-share"

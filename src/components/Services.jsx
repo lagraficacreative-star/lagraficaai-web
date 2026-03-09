@@ -32,7 +32,7 @@ const Services = () => {
     return (
         <section className="section" style={{ background: 'var(--color-bg)', padding: '0 0 4rem 0' }}>
 
-            <div className="container" style={{ padding: '4rem 2rem 0 2rem' }}>
+            <div className="container" style={{ padding: '4rem 1.5rem 0 1.5rem' }}>
                 {/* Intro Section Above Services */}
                 <div style={{ marginBottom: '6rem', maxWidth: '1200px', margin: '0 auto 6rem auto', textAlign: 'center' }}>
                     <h2 style={{
@@ -90,15 +90,15 @@ const Services = () => {
                     marginBottom: '0'
                 }}>
                     {/* Corner markers */}
-                    <div style={{ position: 'absolute', top: -1, left: -1, width: 20, height: 20, borderTop: '2px solid #999', borderLeft: '2px solid #999' }} />
-                    <div style={{ position: 'absolute', top: -1, right: -1, width: 20, height: 20, borderTop: '2px solid #999', borderRight: '2px solid #999' }} />
-                    <div style={{ position: 'absolute', bottom: -1, left: -1, width: 20, height: 20, borderBottom: '2px solid #999', borderLeft: '2px solid #999' }} />
-                    <div style={{ position: 'absolute', bottom: -1, right: -1, width: 20, height: 20, borderBottom: '2px solid #999', borderRight: '2px solid #999' }} />
+                    <div style={{ position: 'absolute', top: 0, left: 0, width: 20, height: 20, borderTop: '2px solid #999', borderLeft: '2px solid #999' }} />
+                    <div style={{ position: 'absolute', top: 0, right: 0, width: 20, height: 20, borderTop: '2px solid #999', borderRight: '2px solid #999' }} />
+                    <div style={{ position: 'absolute', bottom: 0, left: 0, width: 20, height: 20, borderBottom: '2px solid #999', borderLeft: '2px solid #999' }} />
+                    <div style={{ position: 'absolute', bottom: 0, right: 0, width: 20, height: 20, borderBottom: '2px solid #999', borderRight: '2px solid #999' }} />
 
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                        gap: '1rem'
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                        gap: '2rem'
                     }}>
                         {services.map((service, index) => (
                             <motion.div

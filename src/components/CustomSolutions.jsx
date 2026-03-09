@@ -10,19 +10,8 @@ const CustomSolutions = () => {
             padding: '4rem 0' // Reduced vertical padding
         }}>
 
-            {/* Background decoration */}
-            <div style={{
-                position: 'absolute',
-                bottom: '-20%',
-                right: '-10%',
-                width: '500px',
-                height: '500px',
-                background: 'radial-gradient(circle, rgba(0,0,0,0.03) 0%, rgba(255,255,255,0) 70%)',
-                borderRadius: '0',
-                pointerEvents: 'none'
-            }} />
 
-            <div className="container" style={{ padding: '4rem 2rem' }}>
+            <div className="container" style={{ padding: '4rem 1.5rem' }}>
                 <motion.div
                     className="glass-panel"
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -41,10 +30,10 @@ const CustomSolutions = () => {
                     }}
                 >
                     {/* Corner markers to match Services section */}
-                    <div style={{ position: 'absolute', top: -1, left: -1, width: 20, height: 20, borderTop: '2px solid #999', borderLeft: '2px solid #999' }} />
-                    <div style={{ position: 'absolute', top: -1, right: -1, width: 20, height: 20, borderTop: '2px solid #999', borderRight: '2px solid #999' }} />
-                    <div style={{ position: 'absolute', bottom: -1, left: -1, width: 20, height: 20, borderBottom: '2px solid #999', borderLeft: '2px solid #999' }} />
-                    <div style={{ position: 'absolute', bottom: -1, right: -1, width: 20, height: 20, borderBottom: '2px solid #999', borderRight: '2px solid #999' }} />
+                    <div style={{ position: 'absolute', top: 0, left: 0, width: 20, height: 20, borderTop: '2px solid #999', borderLeft: '2px solid #999' }} />
+                    <div style={{ position: 'absolute', top: 0, right: 0, width: 20, height: 20, borderTop: '2px solid #999', borderRight: '2px solid #999' }} />
+                    <div style={{ position: 'absolute', bottom: 0, left: 0, width: 20, height: 20, borderBottom: '2px solid #999', borderLeft: '2px solid #999' }} />
+                    <div style={{ position: 'absolute', bottom: 0, right: 0, width: 20, height: 20, borderBottom: '2px solid #999', borderRight: '2px solid #999' }} />
 
                     <span style={{
                         fontFamily: 'var(--font-sans)',
@@ -73,8 +62,8 @@ const CustomSolutions = () => {
 
                     <div style={{
                         display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                        gap: '1rem',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                        gap: '1.5rem',
                         marginTop: '3rem',
                         textAlign: 'left'
                     }}>

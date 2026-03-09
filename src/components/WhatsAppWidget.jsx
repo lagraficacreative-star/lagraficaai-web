@@ -49,7 +49,8 @@ const WhatsAppWidget = () => {
             zIndex: 1000,
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'flex-end'
+            alignItems: 'flex-end',
+            maxWidth: 'calc(100% - 40px)'
         }}>
             <AnimatePresence>
                 {isOpen && (
@@ -63,7 +64,7 @@ const WhatsAppWidget = () => {
                             background: '#fff',
                             borderRadius: '16px',
                             boxShadow: '0 10px 40px rgba(0,0,0,0.15)',
-                            width: '340px',
+                            width: 'min(340px, 90vw)',
                             overflow: 'hidden',
                             display: 'flex',
                             flexDirection: 'column',
