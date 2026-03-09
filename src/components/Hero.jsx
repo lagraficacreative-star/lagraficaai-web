@@ -8,7 +8,7 @@ const Hero = () => {
             <section className="hero-section" style={{
                 position: 'relative',
                 overflow: 'hidden',
-                minHeight: '40vh',
+                minHeight: '70vh',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -30,7 +30,7 @@ const Hero = () => {
                         width: '100%',
                         height: '100%',
                         backgroundImage: 'url(/images/slider-banner.png)',
-                        backgroundSize: 'contain', // Changed from cover to contain
+                        backgroundSize: 'cover', // Changed from contain to cover
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
                         zIndex: 0
@@ -39,11 +39,11 @@ const Hero = () => {
             </section>
             <style>{`
                 .hero-section {
-                    min-height: 40vh;
+                    min-height: 70vh;
                 }
                 @media (min-width: 768px) {
                     .hero-section {
-                        min-height: 60vh;
+                        min-height: 80vh;
                     }
                 }
             `}</style>
