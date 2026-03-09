@@ -10,20 +10,28 @@ const VideoSection = () => {
             alignItems: 'center',
             padding: '0' // Removed padding to touch previous section
         }}>
-            <video
-                src="/images/video_mirades.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                    maxHeight: '90vh',
-                    objectFit: 'cover'
-                }}
-            />
+            <div style={{
+                position: 'relative',
+                width: '100%',
+                paddingTop: '56.25%', // 16:9 ratio
+                overflow: 'hidden'
+            }}>
+                <video
+                    src="/images/video_mirades.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                    }}
+                />
+            </div>
         </section>
     );
 };

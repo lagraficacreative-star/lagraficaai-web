@@ -33,11 +33,9 @@ const ForAgencies = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
+                        className="for-agencies-content"
                         style={{
-                            padding: '1.5rem 0',
-                            borderLeft: window.innerWidth < 768 ? 'none' : '1px solid rgba(0,0,0,0.1)',
-                            borderTop: window.innerWidth < 768 ? '1px solid rgba(0,0,0,0.1)' : 'none',
-                            marginTop: window.innerWidth < 768 ? '1.5rem' : '0'
+                            padding: '1.5rem 0'
                         }}
                     >
                         <ul style={{ listStyle: 'none', space: 'y-4' }}>
@@ -72,12 +70,23 @@ const ForAgencies = () => {
                 </div>
             </div>
             <style>{`
-        @media (max-width: 768px) {
-          .responsive-grid {
-            grid-template-columns: 1fr !important;
-            gap: 2rem !important;
+          .for-agencies-content {
+            border-left: 1px solid rgba(0,0,0,0.1);
+            margin-top: 0;
+            padding-left: 2rem;
           }
-        }
+          @media (max-width: 768px) {
+            .responsive-grid {
+              grid-template-columns: 1fr !important;
+              gap: 2rem !important;
+            }
+            .for-agencies-content {
+              border-left: none !important;
+              border-top: 1px solid rgba(0,0,0,0.1) !important;
+              margin-top: 1.5rem !important;
+              padding-left: 0 !important;
+            }
+          }
       `}</style>
         </section>
     );

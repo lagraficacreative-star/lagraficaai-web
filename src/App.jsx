@@ -35,7 +35,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={
-  <main style={{ overflowX: 'hidden', width: '100%', position: 'relative' }}>
+  <main style={{ overflowX: 'hidden' }}>
     <div id="inicio"><Hero /></div>
     <div id="servicios"><Services /></div>
     <div id="soluciones"><CustomSolutions /></div>

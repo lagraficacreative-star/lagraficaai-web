@@ -8,7 +8,7 @@ const Hero = () => {
             <section className="hero-section" style={{
                 position: 'relative',
                 overflow: 'hidden',
-                minHeight: '70vh',
+                minHeight: '60vh',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -39,7 +39,7 @@ const Hero = () => {
             </section>
             <style>{`
                 .hero-section {
-                    min-height: 70vh;
+                    min-height: 60vh;
                 }
                 @media (min-width: 768px) {
                     .hero-section {
