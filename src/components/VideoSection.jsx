@@ -13,24 +13,24 @@ const VideoSection = () => {
             <div style={{
                 position: 'relative',
                 width: '100%',
-                paddingTop: '56.25%', // 16:9 ratio
+                paddingTop: '56.25%', // 16:9 Aspect Ratio
                 overflow: 'hidden'
             }}>
-                <video
-                    src="/images/video_mirades.mp4"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
+                <iframe
+                    src="https://www.youtube.com/embed/Dyq8538rAZM?autoplay=1&mute=1&loop=1&playlist=Dyq8538rAZM&controls=1&rel=0"
+                    title="Reproductor de vídeo de YouTube"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-view; web-share"
+                    allowFullScreen
                     style={{
                         position: 'absolute',
                         top: 0,
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        objectFit: 'cover'
+                        border: 'none'
                     }}
-                />
+                ></iframe>
             </div>
         </section>
     );
