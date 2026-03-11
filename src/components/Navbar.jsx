@@ -95,7 +95,6 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                {/* Hamburger Button */}
                 <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <span style={{
                         transform: isMenuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none',

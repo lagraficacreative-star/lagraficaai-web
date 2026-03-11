@@ -13,6 +13,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 
 import Navbar from './components/Navbar';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import AIResources from './components/AIResources';
 
 function App() {
   const { pathname, hash } = useLocation();
@@ -41,6 +42,7 @@ function App() {
     <div id="soluciones"><CustomSolutions /></div>
     <VideoSection />
     <div id="portfolio"><GalleryPreview /></div>
+    <div id="recursos-ia"><AIResources /></div>
     <div id="agencias"><ForAgencies /></div>
   </main>
         } />

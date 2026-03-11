@@ -33,41 +33,6 @@ const Services = () => {
         <section className="section" style={{ background: 'var(--color-bg)', padding: '0 0 4rem 0' }}>
 
             <div className="container" style={{ padding: '4rem 1.5rem 0 1.5rem' }}>
-                {/* Intro Section Above Services */}
-                <div style={{ marginBottom: '6rem', maxWidth: '1200px', margin: '0 auto 6rem auto', textAlign: 'center' }}>
-                    <h2 style={{
-                        fontFamily: 'var(--font-display)',
-                        fontSize: 'clamp(1.3rem, 3.5vw, 2.5rem)',
-                        fontWeight: 800,
-                        lineHeight: 1.1,
-                        marginBottom: '2rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '-0.02em',
-                        color: 'var(--color-text)'
-                    }}>
-                        Construyendo el futuro de lo digital
-                    </h2>
-                    <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-                        <p style={{
-                            fontSize: 'clamp(1.1rem, 2.1vw, 1.5rem)',
-                            lineHeight: 1.4,
-                            color: 'var(--color-text)',
-                            marginBottom: '2rem',
-                            fontWeight: 500
-                        }}>
-                            Somos un grupo de diseñadores, desarrolladores y creativos apasionados con crear experiencias de inteligencia artificial excepcionales.
-                        </p>
-                        <p style={{
-                            fontSize: 'clamp(1rem, 1.6vw, 1.3rem)',
-                            lineHeight: 1.7,
-                            color: 'var(--color-text-muted)',
-                            fontWeight: 400
-                        }}>
-                            Cada proyecto es una oportunidad para crear experiencias de imagen, diseño, creatividad, marketing, páginas web y apps impulsadas por inteligencia artificial.
-                        </p>
-                    </div>
-                </div>
-
                 {/* Header content for Services Section */}
                 <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
                     <h2 style={{

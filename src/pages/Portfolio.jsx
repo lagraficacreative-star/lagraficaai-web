@@ -220,40 +220,6 @@ const Portfolio = () => {
                     </AnimatePresence>
                 </div>
 
-                {/* Bottom Intro Text Section */}
-                <div style={{ marginTop: '10rem', maxWidth: '1200px', marginLeft: 'auto', marginRight: 'auto', textAlign: 'center' }}>
-                    <h2 style={{
-                        fontFamily: 'var(--font-display)',
-                        fontSize: 'clamp(1.2rem, 3.5vw, 2.4rem)',
-                        fontWeight: 800,
-                        lineHeight: 1.1,
-                        marginBottom: '2rem',
-                        textTransform: 'uppercase',
-                        letterSpacing: '-0.02em',
-                        color: '#000'
-                    }}>
-                        Construyendo el futuro de lo digital
-                    </h2>
-                    <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-                        <p style={{
-                            fontSize: 'clamp(1.1rem, 2vw, 1.6rem)',
-                            lineHeight: 1.4,
-                            color: '#333',
-                            marginBottom: '2rem',
-                            fontWeight: 500
-                        }}>
-                            Somos un grupo de diseñadores, desarrolladores y creativos apasionados con crear experiencias de inteligencia artificial excepcionales.
-                        </p>
-                        <p style={{
-                            fontSize: 'clamp(1rem, 1.5vw, 1.3rem)',
-                            lineHeight: 1.7,
-                            color: '#666',
-                            fontWeight: 400
-                        }}>
-                            Cada proyecto es una oportunidad para crear experiencias de imagen, diseño, creatividad, marketing, páginas web y apps impulsadas por inteligencia artificial.
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     );
